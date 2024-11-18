@@ -3,7 +3,7 @@
 	flex-direction: column;
 	align-items: center;
 	margin-top: 0.5%;
-	margin-bottom: 10%;
+	margin-bottom: 200px;
 	margin-left: 50px;
 	margin-right: 50px;
 }
@@ -24,6 +24,7 @@
 	min-width: 300px;
 	border-radius: 10px;
 }
+
 .centered_container button{
 	min-width: 250px;
 	max-width: 250px;
@@ -42,4 +43,8 @@
 	background-color: rgb(255, 102, 102);
 	outline: 10px double whitesmoke;
 	box-shadow: 0 0 20px rgba(255, 102, 102), 0 0 30px rgba(255, 102, 102);
+}
+.centered_container button:active {
+	color: black;
+	background-color: white;
 }

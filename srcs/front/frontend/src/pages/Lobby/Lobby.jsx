@@ -31,11 +31,12 @@ function Lobby(){
 				<div className={styles.centered_container}>
 					<button onClick={() => handleQuick()}>QUICK JOIN</button>
 					<button onClick={() => setOpenCustom(openCustom ? false : true)}>CUSTOM GAME</button>
-					{openCustom && <CustomGameForm/>}
 					<button onClick={() => handleStats()}>STATS</button>
 					<button onClick={() => handleReturn()}>RETURN</button>
 					<br/>
 				</div>
+
+				{openCustom && <CustomGameForm/>}
 			</div>
 
 		</div>

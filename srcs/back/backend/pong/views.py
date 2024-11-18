@@ -1,4 +1,6 @@
 from django.shortcuts import render, HttpResponse
+from django.http import JsonResponse
 
-def pong(request):
-	return HttpResponse("hello")
+
+def createCustomGame(request):
+	return JsonResponse("hello")

@@ -51,7 +51,7 @@ function ProtectedRoute({children}) {
         return <div>Chargement...</div>
     }
 
-    return isAuthorized ? <Navigate to="/login" /> : children//si "isAuthorized" == false, reenvoie l'utilisateur sur la page de login
+    return isAuthorized ? children : <Navigate to="/login" />//si "isAuthorized" == false, reenvoie l'utilisateur sur la page de login
 }
 
 export default ProtectedRoute

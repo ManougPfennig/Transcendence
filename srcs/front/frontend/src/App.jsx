@@ -30,8 +30,9 @@ function App() {
 		<Route path="/profil" element={<ProtectedRoute> <Profil/> </ProtectedRoute>}/>
 		<Route path="/register" element={<Register/>}></Route>
 		<Route path="*" element={<NotFound/>}></Route>
-		<Route path="/pong" element={<ProtectedRoute> <Pong/> </ProtectedRoute>}/>
+		<Route path="/local" element={<ProtectedRoute> <Pong/> </ProtectedRoute>}/>
 		<Route path="/lobby" element={<ProtectedRoute> <Lobby/> </ProtectedRoute>}/>
+		<Route path="/play/:roomId" element={<ProtectedRoute> <Lobby/> </ProtectedRoute>}/>
 	</Routes>
 	</BrowserRouter>
 	)

@@ -164,6 +164,13 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 AUTH_USER_MODEL = 'user.User'
 
+# CSRF_TRUSTED_ORIGINS = [
+# 	'http://c1r1p1:5173',
+# ]
+
+# MIDDLEWARE.remove('django.middleware.csrf.CsrfViewMiddleware')
+
+
 CORS_ALLOW_ALL_ORIGINS = True
 #pour des raison de securite, a l'avenir, penser a chager ce qu'il y a en bas la
 CORS_ALLOW_CREDENTIALS = True

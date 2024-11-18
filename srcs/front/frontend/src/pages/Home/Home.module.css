@@ -53,3 +53,7 @@
 	outline: 10px double whitesmoke;
 	box-shadow: 0 0 20px rgba(255, 102, 102), 0 0 30px rgba(255, 102, 102);
 }
+.centered_container button:active {
+	color: black;
+	background-color: white;
+}

@@ -14,7 +14,7 @@ function Home() {
 	const navigate = useNavigate();
 	
 	const handleLocal = () => {
-		navigate("/pong")
+		navigate("/local")
 	}
 	
 	const handleProfil = () => {
