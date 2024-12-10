@@ -8,7 +8,7 @@ from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
 from rest_framework_simplejwt.views import TokenObtainPairView
 
 from .models import Player
-from .serializers import PlayerSerializer, PlayerRegistrationSerializer
+from .serializers import PlayerSerializer, LanguageSerializer, PlayerRegistrationSerializer
 
 class MyTokenObtainPairSerializer(TokenObtainPairSerializer):
     @classmethod
@@ -36,6 +36,16 @@ def getPlayerProfile(request):
     try:
         player = Player.objects.get(user=request.user)
         serializer = PlayerSerializer(player)
+        return Response(serializer.data)
+    except Player.DoesNotExist:
+        return Response({"detail": "Player profile not found"}, status=status.HTTP_404_NOT_FOUND)
+
+@api_view(['GET'])
+@permission_classes([IsAuthenticated])
+def getPlayerLanguage(request):
+    try:
+        player = Player.objects.get(user=request.user)
+        serializer = LanguageSerializer(player)
         return Response(serializer.data)
     except Player.DoesNotExist:
         return Response({"detail": "Player profile not found"}, status=status.HTTP_404_NOT_FOUND)

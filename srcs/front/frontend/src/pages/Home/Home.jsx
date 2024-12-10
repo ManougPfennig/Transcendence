@@ -16,6 +16,10 @@ function Home() {
 	const handleProfil = () => {
 		navigate("/profile")
 	}
+	
+	const handleSettings = () => {
+		navigate("/settings")
+	}
 
 	const handleOnline = () => {
 		navigate("/lobby")
@@ -44,7 +48,7 @@ function Home() {
 				<div className={styles.centered_container}>
 					<button onClick={() => handleOnline()}>PLAY ONLINE</button>
 					<button onClick={() => handleProfil()}>PROFILE</button>
-					<button>SETTINGS</button>
+					<button onClick={() => handleSettings()}>SETTINGS</button>
 					<button onClick={() => handleLogout()}>LOGOUT</button>
 					<br/>
 				</div>

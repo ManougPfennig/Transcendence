@@ -12,6 +12,7 @@ import Handle42Callback from "./components/Handle42Callback.jsx";
 import Header from "./components/Header.jsx";
 import ProtectedRoute from "./components/ProtectedRoute.jsx";
 import { AuthProvider} from "./context/AuthContext.jsx";
+import Settings from "./pages/Settings/Settings"
 
 function App() {
 
@@ -28,6 +29,7 @@ function App() {
 						<Route path="/42connect" element={<Handle42Callback />} />
 						<Route path="/home" element={<ProtectedRoute><Home /></ProtectedRoute>} />
 						<Route path="/profile" element={<ProtectedRoute><Profile /></ProtectedRoute>} />
+						<Route path="/settings" element={<ProtectedRoute><Settings /></ProtectedRoute>} />
 						<Route path="/lobby" element={<ProtectedRoute><Lobby /></ProtectedRoute>} />
 						<Route path="/play" element={<ProtectedRoute><RedirectHome /></ProtectedRoute>} />
 						<Route path="/local" element={<ProtectedRoute><LocalPong /></ProtectedRoute>} />

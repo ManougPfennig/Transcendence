@@ -15,6 +15,13 @@ class PlayerSerializer(serializers.ModelSerializer):
         model = Player
         fields = ['username', 'profile_picture', 'first_name', 'last_name', 'email']
 
+class LanguageSerializer(serializers.ModelSerializer):
+    username = serializers.CharField(source='user.language', read_only=True)
+
+    class Meta:
+        model = Player
+        fields = ['username', 'language']
+
 class PlayerRegistrationSerializer(serializers.ModelSerializer):
     username = serializers.CharField(write_only=True)
     password = serializers.CharField(write_only=True)
