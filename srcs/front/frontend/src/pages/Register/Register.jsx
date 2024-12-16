@@ -50,7 +50,7 @@ const Register = () => {
                 alert(JSON.stringify(data))
             }
         } catch (error) {
-            setDisplayError("Username is already taken")
+            setDisplayError("Username is already taken or is too long (max 17 characters)")
         }
     }
 

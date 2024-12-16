@@ -30,7 +30,7 @@
     padding: 8px;
     margin-bottom: 20px;
     font-size: 1em;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: monospace, Verdana, Geneva, Tahoma, sans-serif, sans-serif;
     background-color: rgba(var(--bs-emphasis-color-rgb), 0.65);
     border: none;
 }
@@ -43,7 +43,7 @@
     margin-bottom: 20px;
     font-size: 1.5em;
     font-weight: bold;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: monospace, Verdana, Geneva, Tahoma, sans-serif, sans-serif;
     color: whitesmoke;
     background-color: rgb(75, 0, 130);
     box-shadow: 0 0 10px rgba(75, 0, 130, 1);

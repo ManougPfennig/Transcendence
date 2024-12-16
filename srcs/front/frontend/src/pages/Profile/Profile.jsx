@@ -117,7 +117,7 @@ const Profile = () => {
 						) : (
 							<img
 								className={styles.logo}
-								src="https://t4.ftcdn.net/jpg/05/59/91/77/360_F_559917754_dPi14NuRWEofju2XA0Jz07kSITgjYYJm.jpg"
+								src="https://i.ytimg.com/vi/UqE2vaBsIDo/maxresdefault.jpg"
 								alt="Default Profile"
 							/>
 						)}

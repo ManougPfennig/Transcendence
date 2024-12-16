@@ -1,7 +1,7 @@
 import { useState, useEffect, useContext } from 'react';
 import AuthContext from '../../context/AuthContext';
 import styles from './Friends.module.css';
-import logo from "../../assets/images/logo_profil.png"
+import logo from "../../assets/images/logo_friends.png"
 
 const Friends = () => {
 	const { authTokens } = useContext(AuthContext);
