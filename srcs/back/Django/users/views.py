@@ -25,9 +25,6 @@ class RegisterPlayer(APIView):
     permission_classes = [AllowAny]
 
     def post(self, request):
-        username = request.data.get('username', '')
-        if len(username) > 17:
-            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
         serializer = PlayerRegistrationSerializer(data=request.data)
         if serializer.is_valid():
             serializer.save()
