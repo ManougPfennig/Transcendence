@@ -8,4 +8,4 @@ npm install bootstrap-icons
 npm install react-bootstrap boostrap
 npm install jwt-decode
 npm update
-npm run dev -- --host
+npm run build
