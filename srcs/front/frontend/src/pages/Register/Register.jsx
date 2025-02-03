@@ -36,7 +36,6 @@ const Register = () => {
         const submitData = {
             username: formData.username,
             password: formData.password,
-			language: "English", //need to be put in the player table in the database, this is handled in user table
         }
 
         try {

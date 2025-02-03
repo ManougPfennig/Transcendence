@@ -9,7 +9,7 @@ import logo from "../assets/images/42img.png";
 import { useTranslation } from 'react-i18next'
 
 const Header = () => {
-	const { authTokens, logoutUser } = useContext(AuthContext);
+	const { authTokens, logoutUser, languageContext } = useContext(AuthContext);
 	const { i18n } = useTranslation();
 	const [userLanguage, setLanguage] = useState({
 		language: ''
@@ -29,9 +29,7 @@ const Header = () => {
         }
     }, [authTokens])
 
-	//function handleLanguageChange(event){
-	//	setLanguage({ language: event });
-	//}
+
 
 	const handleLanguageChange = async (language) => {
 		try {
@@ -46,6 +44,7 @@ const Header = () => {
 				},
 				body: JSON.stringify({ language }),
 			});
+			window.location.reload(false)
 		} catch (error) {
 			console.error('Failed to update language preference:', error);
 		}

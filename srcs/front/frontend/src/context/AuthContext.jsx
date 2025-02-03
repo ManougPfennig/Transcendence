@@ -11,6 +11,7 @@ export const AuthProvider = ({ children }) => {
 	let [authTokens, setAuthTokens] = useState(() => localStorage.getItem('authTokens') ? JSON.parse(localStorage.getItem('authTokens')) : null)
 	let [user, setUser] = useState(() => localStorage.getItem('authTokens') ? jwtDecode(JSON.parse(localStorage.getItem('authTokens')).access) : null)
 	let [loading, setLoading] = useState(true)
+	let [languageContext, setLanguageContext] = useState(null)
 
 	const navigate = useNavigate();
 
@@ -23,6 +24,30 @@ export const AuthProvider = ({ children }) => {
 	}
 
 	
+	let getPlayerLanguage = async () => {
+		try {
+			let response = await fetch(`${import.meta.env.VITE_API_URL}/users/settings/`, {
+				method: 'GET',
+				headers: {
+					'Content-Type': 'application/json',
+					'Authorization': 'Bearer ' + String(authTokens.access)
+				}
+			})
+
+			let data = await response.json()
+
+			if (response.status === 200) {
+				const languageContext = data.language;
+                setLanguageContext({ languageContext });
+			} else if (response.status === 401) {
+				logoutUser()
+			}
+		} catch (error) {
+			console.error('Failed to fetch language', error)
+			logoutUser()
+		}
+	}
+
 	let updateToken = async () => {
 		if (!authTokens) return;
 		
@@ -99,13 +124,15 @@ export const AuthProvider = ({ children }) => {
 		setAuthTokens: setAuthTokens,
 		setUser: setUser,
 		logoutUser: logoutUser,
-		loginWith42: loginWith42
+		loginWith42: loginWith42,
+		languageContext: languageContext
 	}
 
 	useEffect(() => {
 		if (authTokens && user) {
 			const ws = new WebSocket(`wss://${window.location.host}/ws/online/${user.username}/`);
-	
+			getPlayerLanguage();
+			console.log({user})
 			return () => {
 				ws.close();
 			};
